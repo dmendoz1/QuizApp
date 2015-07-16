@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> YouKnow!? </title>
+        <meta name ="viewport" content width-device, initial-scale=1, maximum-scale=1 />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/themes/youKnowTwo.css">
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="javascript.js" > </script>
+        <script src="js/quiz.js"></script>
+        <script>
+            
+        </script>
+    </head>
+    <body onload="registerHandlers()">
+        <div data-role="page" id="mainPage" data-theme="b" >  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1 style="margin-top:10px; font-weight: bold"> YouKnow!?</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#about" data-icon="star" data-transition="slide">About</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <h4> Quiz yourself on one the following two categories! </h4>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" id="col1">
+                        <h3> American History </h3>
+                        <ul data-role="listview" data-inset="false">
+                            <li><a href="#civil" data-transition="slide">&lt; 1900</a></li>
+                            <li><a href="#ww" data-transition="slide">1900 - 2000s</a></li> 
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" id="col2">
+                        <h3> 90s Television </h3>
+                        <ul data-role="listview" data-inset="false">
+                            <li><a href="#cartoons" data-transition="slide">90's Cartoons'</a></li>
+                            <li><a href="#shows" data-transition="slide">90's TV Shows</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="civil" data-theme="b" data-dom-cache="false">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> &lt; 1900 </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#about" data-icon="edit" data-transition="slide">About</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id= "civilStartPage">
+                    <h3> Click the START button below to begin the '&lt; 1900' quiz!</h3>
+                    <button id="startCivil">START</button>
+                    <br /> <br /> <br />-
+                    <h4 style="bottom:0"> Note: There are a total of 10 questions, with each being worth 5 points.  Remember, you can stop the quiz at any point!</h4>
+                </div>
+                <div id="qa"></div>
+                <div id="result">
+                    <h4>&nbsp;&nbsp;&nbsp;Your Final Score:&nbsp; &nbsp; </h4>
+                    <center> <h1 id="score2" style="display:inline-block"></h1><h1 style="display: inline-block">&nbsp;/&nbsp;50</h1></center><br/>
+                    <button id="return" type="button">Return to Home</button>
+                    <button id="playAgain" type"button">Play this one again? </button>
+                </div>
+                <div id="nextStop">
+                    <h4 style="display:inline-block">&nbsp;&nbsp;&nbsp;Score:&nbsp; &nbsp; </h4><h1 id="score" style="display:inline-block"></h1>
+                    <h1 style="display:inline-block">&nbsp;/&nbsp;50</h1>
+                    <button id="next" class="ui-btn myButton">Next</button>
+                    <button id="stop" class="ui-btn myButton">Stop</button><br><br><br>
+                </div>
+            </div>
+            
+        </div>
+    <div data-role="page" id="about" data-theme="b">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> YouKnow!? </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div data-role="main" class="ui-content">
+                <h2> What's YouKnow!?</h2>
+                <p> This is a simple application that tests your knowledge on American History and Television from the 1990s. The questions are selected in random order and the score updates as the player gets a questions right or wrong!   </p>
+            </div>
+            
+        </div>
+        <div data-role="page" id="contact" data-theme="b">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> Contact Me </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#about" data-icon="edit" data-transition="slide">About</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div data-role="main" class="ui-content">
+                <p> I'm Daniel Mendoza, currently a Senior at Santa Clara University majoring in Web Design and Engineering and minoring in Computer Engineering. You can reach me at (408)813-3863 or email me at dmendoza@scu.edu </p>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="shows" data-theme="b" data-dom-cache="false">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> Television </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#about" data-icon="edit" data-transition="slide">About</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id= "showsStartPage">
+                    <h3> Click the START button below to begin the '90's Shows' quiz!</h3>
+                    <button id="startShows">START</button>
+                    <br /> <br /> <br />
+                    <h4 style="bottom:0"> Note: There are a total of 10 questions, with each being worth 5 points.  Remember, you can stop the quiz at any point!</h4>
+                </div>
+                <div id="qaShows"></div>
+                <div id="resultShows">
+                    <h4>&nbsp;&nbsp;&nbsp;Your Final Score:&nbsp; &nbsp; </h4>
+                    <center> <h1 id="score2Shows" style="display:inline-block"></h1><h1 style="display: inline-block">&nbsp;/&nbsp;50</h1></center><br/>
+                    <input id="returnShows" value="Return To Home" type="reset">
+                    <button id="playAgainShows" type="button">Play this one again? </button>
+                </div>
+                <div id="nextStopShows">
+                    <h4 style="display:inline-block">&nbsp;&nbsp;&nbsp;Score:&nbsp; &nbsp; </h4><h1 id="scoreShows" style="display:inline-block"></h1>
+                    <h1 style="display:inline-block">&nbsp;/&nbsp;50</h1>
+                    <button id="nextShows" class="ui-btn myButton">Next</button>
+                    <button id="stopShows" class="ui-btn myButton">Stop</button><br><br><br>
+                </div>
+
+            
+            
+            </div>
+            
+        </div>
+        
+        
+        
+    
+        
+         <div data-role="page" id="ww" data-theme="b" data-dom-cache="false">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> &gt; 1900 </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#about" data-icon="edit" data-transition="slide">About</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id= "wwStartPage">
+                    <h3> Click the START button below to begin the '&gt; 1900' quiz!</h3>
+                    <button id="startWw">START</button>
+                    <br /> <br /> <br />
+                    <h4 style="bottom:0"> Note: There are a total of 10 questions, with each being worth 5 points.  Remember, you can stop the quiz at any point!</h4>
+                </div>
+                <div id="qaWw"></div>
+                <div id="resultWw">
+                    <h4>&nbsp;&nbsp;&nbsp;Your Final Score:&nbsp; &nbsp; </h4>
+                    <center> <h1 id="score2Ww" style="display:inline-block"></h1><h1 style="display: inline-block">&nbsp;/&nbsp;50</h1></center><br/>
+                    <input id="returnWw" value="Return To Home" type="reset">
+                    <button id="playAgainWw" type="button">Play this one again? </button>
+                </div>
+                <div id="nextStopWw">
+                    <h4 style="display:inline-block">&nbsp;&nbsp;&nbsp;Score:&nbsp; &nbsp; </h4><h1 id="scoreWw" style="display:inline-block"></h1>
+                    <h1 style="display:inline-block">&nbsp;/&nbsp;50</h1>
+                    <button id="nextWw" class="ui-btn myButton">Next</button>
+                    <button id="stopWw" class="ui-btn myButton">Stop</button><br><br><br>
+                </div>
+
+            
+            
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="cartoons" data-theme="b" data-dom-cache="false">  <!--assigns div as main page of app; sets up page of app -->
+            <div data-role="header">
+                <h1> 90's Cartoons' </h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainPage" data-icon="home" data-transition="slide">Home</a></li>
+                        <li><a href="#about" data-icon="edit" data-transition="slide">About</a></li>
+                        <li><a href="#contact" data-icon="mail" data-transition="slide">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id= "cartoonsStartPage">
+                    <h3> Click the START button below to begin the '90's Cartoons' quiz!</h3>
+                    <button id="startCartoons">START</button>
+                    <br /> <br /> <br />
+                    <h4 style="bottom:0"> Note: There are a total of 10 questions, with each being worth 5 points.  Remember, you can stop the quiz at any point!</h4>
+                </div>
+                <div id="qaCartoons"></div>
+                <div id="resultCartoons">
+                    <h4>&nbsp;&nbsp;&nbsp;Your Final Score:&nbsp; &nbsp; </h4>
+                    <center> <h1 id="score2Cartoons" style="display:inline-block"></h1><h1 style="display: inline-block">&nbsp;/&nbsp;50</h1></center><br/>
+                    <input id="returnCartoons" value="Return To Home" type="reset">
+                        <button id="playAgainCartoons" type="button">Play this one again? </button>
+                        </div>
+                <div id="nextStopCartoons">
+                    <h4 style="display:inline-block">&nbsp;&nbsp;&nbsp;Score:&nbsp; &nbsp; </h4><h1 id="scoreCartoons" style="display:inline-block"></h1>
+                    <h1 style="display:inline-block">&nbsp;/&nbsp;50</h1>
+                    <button id="nextCartoons" class="ui-btn myButton">Next</button>
+                    <button id="stopCartoons" class="ui-btn myButton">Stop</button><br><br><br>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>        
+
+
+
+    </body>
+</html>
